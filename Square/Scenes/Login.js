@@ -4,17 +4,17 @@ import {Image,StyleSheet,Text,View} from 'react-native';
 
 import Dimensions from 'Dimensions';
 
-import {BlurView} from 'react-native-blur';
+var BlurView = require('react-native-blur').BlurView;
 
 const HomeScene = React.createClass({
   render(){
     return(
       <View style={style.container}>
         <Image style={style.img} source={require('./../Assets/LoginBackground.png')}>
+          <BlurView blurType="light" style={style.container}>
+            <Text>Login</Text>
+          </BlurView>
         </Image>
-        <BlurView blurType="dark" style={style.container}>
-          <Text>Hi, I am a tiny menu item</Text>
-        </BlurView>
       </View>
     );
   }
@@ -33,7 +33,7 @@ const style = StyleSheet.create({
   container:{
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems:'center',
     backgroundColor:'transparent',
   },
   img:{
