@@ -12,7 +12,7 @@ import {
   View
 } from 'react-native';
 
-import Login from './Scenes/Login.js';
+import Login from './Scenes/Login';
 
 class Square extends Component {
   render() {
