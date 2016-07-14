@@ -20,12 +20,12 @@
   
   NSURL *jsCodeLocation;
   
-  NSString *jsUrl = @"http://localhost:8081/index.ios.bundle?platform=ios&dev=false&minify=true";
+//  NSString *jsUrl = @"http://localhost:8081/index.ios.bundle?platform=ios&dev=false&minify=true";
 
   [[RCTBundleURLProvider sharedSettings] setDefaults];
   jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
   
-  //jsCodeLocation = [NSURL URLWithString:jsUrl];
+//  jsCodeLocation = [NSURL URLWithString:jsUrl];
   
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
                                                       moduleName:@"Square"

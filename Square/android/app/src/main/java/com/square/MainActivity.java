@@ -1,6 +1,7 @@
 package com.square;
 
 import com.facebook.react.ReactActivity;
+import com.BV.LinearGradient.LinearGradientPackage;
 import com.cmcewen.blurview.BlurViewPackage;
 
 public class MainActivity extends ReactActivity {

@@ -2,6 +2,9 @@ import React from 'react';
 import {View,Text,StyleSheet,Image,TextInput,TouchableHighlight} from 'react-native';
 import {BlurView} from 'react-native-blur';
 import Dimensions from 'Dimensions';
+
+
+
 const Login = React.createClass({
   render(){
     return(

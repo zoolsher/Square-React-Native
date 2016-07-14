@@ -13,12 +13,13 @@ import {
 } from 'react-native';
 
 import Login from './Scenes/Login';
+import Tabbar from './Scenes/Tabbar';
 
 class Square extends Component {
   render() {
     return (
-      
-        <Login/>
+        <Tabbar/>
+        
         
       
     );

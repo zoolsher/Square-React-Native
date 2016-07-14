@@ -8,6 +8,7 @@
   "dependencies": {
     "react": "15.2.1",
     "react-native": "0.29.0",
-    "react-native-blur": "^1.0.0"
+    "react-native-blur": "^1.0.0",
+    "react-native-linear-gradient": "^1.5.12"
   }
 }
