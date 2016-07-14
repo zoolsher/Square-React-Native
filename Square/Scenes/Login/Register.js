@@ -8,11 +8,11 @@ const Register = React.createClass({
       <BlurView blurType="light" style={style.container}>
         <Text style={[style.title,{marginBottom:30,fontSize:20}]}>注册</Text>
         <View style={[style.line]}>
-          <TouchableHighlight style={{flex:1}} activeOpacity={1} underlayColor={'transparent'} onPress={this.props.goToLogin}>
-            <Text style={{textAlign:'left',color:'white'}}>{'<'}</Text>
+          <TouchableHighlight style={{flex:1}} activeOpacity={1} underlayColor={'transparent'} onPress={this.props.goToDefault}>
+            <Text style={{textAlign:'left',color:'white'}}>{'<'}返回</Text>
           </TouchableHighlight>
-          <TouchableHighlight style={{flex:1}} activeOpacity={1} underlayColor={'transparent'}  onPress={this.props.goToDefault}>
-            <Text style={{textAlign:'right',color:'white'}}>{'>'}</Text>
+          <TouchableHighlight style={{flex:1}} activeOpacity={1} underlayColor={'transparent'} >
+            <Text style={{textAlign:'right',color:'white'}}>下一步{'>'}</Text>
           </TouchableHighlight>
         </View>
         <View style={style.line}>

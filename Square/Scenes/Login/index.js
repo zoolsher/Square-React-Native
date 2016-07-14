@@ -13,22 +13,35 @@ var BlurView = require('react-native-blur').BlurView;
 const HomeScene = React.createClass({
   getInitialState(){
     return{
-      left:0
+      left:0,
+      showCom:'default'
     }
   },
   goToDefault(){
     LayoutAnimation.configureNext(anim);
-    this.setState({left:0})
+    this.setState({showCom:'default'})
   },
   goToLogin(){
     LayoutAnimation.configureNext(anim);
-    this.setState({left:-Dimensions.get('window').width})
+    this.setState({showCom:'login'})
   },
   goToRegister(){
     LayoutAnimation.configureNext(anim);
-    this.setState({left:-Dimensions.get('window').width*2})
+    this.setState({showCom:'register'})
   },
   render(){
+    var cur;
+    switch(this.state.showCom){
+      case "default":
+        cur = <Default style={style.default} goToLogin={this.goToLogin} goToRegister={this.goToRegister}/>;
+        break;
+      case "login":
+        cur = <Login style={style.default} goToDefault={this.goToDefault} goToRegister={this.goToRegister}/>;
+        break;
+      case "register":
+        cur = <Register style={style.default} goToLogin={this.goToLogin} goToDefault={this.goToDefault}/>;
+        break;
+    }
     return(
       <View style={style.container}>
         <Image style={style.img} source={require('image!LoginBackground')}>
@@ -36,9 +49,7 @@ const HomeScene = React.createClass({
                 left:this.state.left
             }]}
             >
-            <Default style={style.default} goToLogin={this.goToLogin} goToRegister={this.goToRegister}/>
-            <Login style={style.default} goToDefault={this.goToDefault} goToRegister={this.goToRegister}/>
-            <Register style={style.default} goToLogin={this.goToLogin} goToDefault={this.goToDefault}/>
+            {cur}
           </View>
         </Image>
       </View>
@@ -85,7 +96,7 @@ const style = StyleSheet.create({
     position:'absolute',
     top:0,
     bottom:0,
-    width:Dimensions.get('window').width*3,
+    width:Dimensions.get('window').width,
     flexDirection:'row',
   }
 });
