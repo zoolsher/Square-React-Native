@@ -18,7 +18,7 @@ import Tabbar from './Scenes/Tabbar';
 class Square extends Component {
   render() {
     return (
-        <Tabbar/>
+        <Login/>
         
         
       
