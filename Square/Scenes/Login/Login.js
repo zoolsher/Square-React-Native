@@ -12,10 +12,10 @@ const Login = React.createClass({
         <Text style={[style.title,{marginBottom:30,fontSize:20}]}>登录</Text>
         <View style={[style.line]}>
           <TouchableHighlight style={{flex:1}} activeOpacity={1} underlayColor={'transparent'} onPress={this.props.goToDefault}>
-            <Text style={{textAlign:'left',color:'white'}}>&lang; 返回</Text>
+            <Text style={{textAlign:'left',color:'white',fontSize:20}}>&lang; 返回</Text>
           </TouchableHighlight>
-          <TouchableHighlight style={{flex:1}} activeOpacity={1} underlayColor={'transparent'}>
-            <Text style={{textAlign:'right',color:'white'}}>下一步 &rang;</Text>
+          <TouchableHighlight style={{flex:1}} activeOpacity={1} underlayColor={'transparent'} onPress={this.props.actions.test}>
+            <Text style={{textAlign:'right',color:'white',fontSize:20}}>下一步 &rang;</Text>
           </TouchableHighlight>
         </View>
         <View style={style.line}>
@@ -23,7 +23,7 @@ const Login = React.createClass({
             用户名
           </Text>
           <TextInput
-            style={[style.normalText,{height: 40,flex:2}]}
+            style={[style.normalText,{height: 40,flex:2,textAlign:'right'}]}
             onChangeText={(text) => this.setState({text})}
             />  
         </View>
@@ -33,7 +33,7 @@ const Login = React.createClass({
             密码
           </Text>
           <TextInput
-            style={[style.normalText,{height: 40,flex:2}]}
+            style={[style.normalText,{height: 40,flex:2,textAlign:'right'}]}
             onChangeText={(text) => this.setState({text})}
             password={true}
             />  
@@ -48,7 +48,7 @@ var imageWidth = 100;
 
 var style = StyleSheet.create({
   normalText:{
-    flex:1,color:'white'
+    flex:1,color:'white',
   },
   line:{
     justifyContent:'center',

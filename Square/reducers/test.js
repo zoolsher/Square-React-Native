@@ -1,9 +1,13 @@
 export default function test(state = {},action = {}){
+  console.log(action);
   switch(action.type){
-    case "test":
+    case "watever":
       return{
         ...state,
-        test:'test'
+        user:{
+          ...state.user,
+          state:'nok'
+        }
       }
     default:
       return state;

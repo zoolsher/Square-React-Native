@@ -33,13 +33,13 @@ const HomeScene = React.createClass({
     var cur;
     switch(this.state.showCom){
       case "default":
-        cur = <Default style={style.default} goToLogin={this.goToLogin} goToRegister={this.goToRegister}/>;
+        cur = <Default style={style.default} {...this.props} goToLogin={this.goToLogin} goToRegister={this.goToRegister}/>;
         break;
       case "login":
-        cur = <Login style={style.default} goToDefault={this.goToDefault} goToRegister={this.goToRegister}/>;
+        cur = <Login style={style.default} {...this.props} goToDefault={this.goToDefault} goToRegister={this.goToRegister}/>;
         break;
       case "register":
-        cur = <Register style={style.default} goToLogin={this.goToLogin} goToDefault={this.goToDefault}/>;
+        cur = <Register style={style.default} {...this.props} goToLogin={this.goToLogin} goToDefault={this.goToDefault}/>;
         break;
     }
     return(

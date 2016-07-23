@@ -6,14 +6,14 @@ const Default = React.createClass({
     return(
     <View style={[styles.container,this.props.style]}>
       <Image style={styles.logo} source={require('./../../Assets/logo.png')}></Image>
-      <Text style={[styles.title,{marginBottom:30,fontSize:20}]}>Square</Text>
-      <Text style={styles.title}>Slogon: Square others posts,{'\n'}improve your performance in architecture</Text>
+      <Text style={[styles.title,{marginBottom:30,fontSize:25}]}>Square</Text>
+      <Text style={[styles.title,{fontSize:20}]}>Slogon: Square others posts,{'\n'}improve your performance in architecture</Text>
       <View style={{marginTop:10,flexDirection:'row'}}>
-        <TouchableHighlight activeOpacity={1} underlayColor={'transparent'} style={{flex:1}} onPress={this.props.goToLogin}>
-          <Text style={{textAlign:'center',color:'white'}}>登录</Text>
+        <TouchableHighlight activeOpacity={1} underlayColor={'transparent'} style={{flex:1,padding:20}} onPress={this.props.goToLogin}>
+          <Text style={{textAlign:'center',color:'white',fontSize:20}}>登录</Text>
         </TouchableHighlight>
-        <TouchableHighlight activeOpacity={1} underlayColor={'transparent'} style={{flex:1}} onPress={this.props.goToRegister}>
-          <Text style={{textAlign:'center',color:'white'}}>注册</Text>
+        <TouchableHighlight activeOpacity={1} underlayColor={'transparent'} style={{flex:1,padding:20}} onPress={this.props.goToRegister}>
+          <Text style={{textAlign:'center',color:'white',fontSize:20}}>注册</Text>
         </TouchableHighlight>
       </View>
     </View>

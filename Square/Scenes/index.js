@@ -7,7 +7,7 @@ import * as reducers from './../reducers';
 import {connect} from 'react-redux';
 
 
-import Login from './Login';
+import Login from './Home';
 
 import * as actions from './../actions/';
 
@@ -17,7 +17,7 @@ const store = createStoreWithMiddleware(reducer);
 
 function mapStateToProps(state){
   return{
-    state:state.counter
+    user:state.user
   }
 }
 function dispatchActions(dispatch){
