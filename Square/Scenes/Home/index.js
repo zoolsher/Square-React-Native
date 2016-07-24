@@ -6,14 +6,17 @@ import {
   Text
 }from 'react-native';
 import TopSlider from './TopSlider';
-
+import MidBar from './MidBar';
+import Seg from './segments';
 
 const PaddingMidWare = React.createClass({
   render(){
     return (
-      <View style={{paddingTop:64}}>
+      <View style={{paddingTop:64,backgroundColor:'#222222'}}>
         <TopSlider>
         </TopSlider>
+        <MidBar></MidBar>
+        <Seg></Seg>
       </View>
     );
   }

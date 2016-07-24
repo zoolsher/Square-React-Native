@@ -48,8 +48,11 @@ const TopSlider = React.createClass({
         {
           (new Array(totalSlideNumber)).fill(1).map((value,index)=>{
             return (
-              <TouchableHighlight key={index} onPress={this._clickToSlide(index)}>
+              <TouchableHighlight style={{marginTop:-1}} key={index} onPress={this._clickToSlide(index)}>
                 <Animated.Image  style={[styles.img,{height:this.state.imgHeight[index]}]} source={{uri:'http://www.sideshowtoy.com/wp-content/uploads/2015/12/marvel-iron-man-mark-xlvi-sixth-scale-captain-america-civil-war-hot-toys-thumb-902622.jpg'}}>
+                  <Text style={{color:'white',fontFamily:'DINCond-Regular',fontSize:20}}>
+                    content Title
+                  </Text>
                 </Animated.Image>
               </TouchableHighlight>
             );
@@ -65,7 +68,10 @@ const TopSlider = React.createClass({
 
 const styles = StyleSheet.create({
   img:{
-    width:Dimensions.get('window').width
+    width:Dimensions.get('window').width,
+    flex:1,
+    justifyContent:'center',
+    alignItems:'center'
   }
 });
 
