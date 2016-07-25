@@ -8,15 +8,20 @@ import {
 import TopSlider from './TopSlider';
 import MidBar from './MidBar';
 import Seg from './segments';
+import TabBar from './tabbar';
+
+import Dimensions from 'Dimensions';
+var ScreenHeight = Dimensions.get('window').height;
+var ScreenWidth = Dimensions.get('window').width;
 
 const PaddingMidWare = React.createClass({
   render(){
     return (
-      <View style={{paddingTop:64,backgroundColor:'#222222'}}>
-        <TopSlider>
-        </TopSlider>
+      <View style={{height:ScreenHeight,paddingTop:64,backgroundColor:'#222222'}}>
+        <TopSlider></TopSlider>
         <MidBar></MidBar>
-        <Seg></Seg>
+        <Seg height={ScreenHeight-333}></Seg>
+        <TabBar></TabBar>
       </View>
     );
   }
@@ -26,6 +31,7 @@ const HomePage = React.createClass({
   render(){
     return(
       <NavigatorIOS
+        ref="nav"
         barTintColor='black'
         tintColor='white'
         titleTextColor='white'

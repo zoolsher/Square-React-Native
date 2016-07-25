@@ -20,10 +20,10 @@ const MidBar = React.createClass({
 const styles = StyleSheet.create({
   container:{
     flexDirection:'row',
-    flex:1,
     justifyContent:'center',
     alignItems:'center',
-    padding:3
+    padding:3,
+    height:25
   },
   text:{
     flex:1,

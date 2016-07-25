@@ -3,6 +3,7 @@ import {
 	View,
 	Text,
 	StyleSheet,
+    Image
 }from 'react-native';
 
 import Swiper from 'react-native-swiper';
@@ -15,7 +16,6 @@ var styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'red',
   },
   slide2: {
     flex: 1,
@@ -41,9 +41,12 @@ var styles = StyleSheet.create({
 var swiper = React.createClass({
 
   render: function() {
+    var imgHeight = this.props.height-20;
     return (
 		<View>
-
+			<View>
+              <Text style={{color:'white'}}>asdf</Text>
+			</View>
 			<Swiper style={styles.wrapper}
 				dot={<View style={{
 				backgroundColor:'rgba(255,255,255,.3)',
@@ -64,17 +67,18 @@ var swiper = React.createClass({
 				left:10,
 				right:null,
 			}}
-			height={200}
+			height={imgHeight}
 			autoplay={true}
-			showsButtons={false}>
+			showsButtons={false}
+              >
 			<View style={styles.slide1}>
-			  <Text style={styles.text}>Hello Swiper</Text>
+              <Image style={{width:320,height:imgHeight}} source={{uri:"http://blogs-images.forbes.com/erikkain/files/2016/05/Captain-America-Civil-War-concept-art-1-1200x641.jpg"}}></Image>
 			</View>
 			<View style={styles.slide2}>
-			  <Text style={styles.text}>Beautiful</Text>
+			  <Image style={{height:imgHeight,width:320}} source={{uri:"http://blogs-images.forbes.com/erikkain/files/2016/05/Captain-America-Civil-War-concept-art-1-1200x641.jpg"}}></Image>
 			</View>
 			<View style={styles.slide3}>
-			  <Text style={styles.text}>And simple</Text>
+			  <Image style={{height:imgHeight,width:320}} source={{uri:"http://blogs-images.forbes.com/erikkain/files/2016/05/Captain-America-Civil-War-concept-art-1-1200x641.jpg"}}></Image>
 			</View>
 			</Swiper>
 	  	</View>
