@@ -63,7 +63,7 @@ const Seg = React.createClass({
                 <View style={{marginTop:1}}>
                   {
                     [Collections,Works,Square].filter(($,index)=>index==this.state.selected).map(
-                      ($,index)=><$ key={index} height={this.props.height-22}/>
+                      ($,index)=><$ nav={this.props.nav} key={index} height={this.props.height-22}/>
                     )
                   }
                 </View>

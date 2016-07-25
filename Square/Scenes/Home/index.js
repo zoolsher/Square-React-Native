@@ -20,18 +20,18 @@ const PaddingMidWare = React.createClass({
       <View style={{height:ScreenHeight,paddingTop:64,backgroundColor:'#222222'}}>
         <TopSlider></TopSlider>
         <MidBar></MidBar>
-        <Seg height={ScreenHeight-333}></Seg>
+        <Seg nav={_navRefObj} height={ScreenHeight-333}></Seg>
         <TabBar></TabBar>
       </View>
     );
   }
 });
-
+var _navRefObj = {nav:null};
 const HomePage = React.createClass({
   render(){
     return(
       <NavigatorIOS
-        ref="nav"
+        ref={($)=>{_navRefObj.nav=$;console.log('running ref')}}
         barTintColor='black'
         tintColor='white'
         titleTextColor='white'
