@@ -10,6 +10,10 @@ import {
 import Swiper from 'react-native-swiper';
 import Square from './square';
 import WorksDetail from './details/works';
+import Dimensions from 'Dimensions';
+
+var ScreenWidth = Dimensions.get('window').width;
+
 var styles = StyleSheet.create({
   wrapper: {
   },
@@ -83,19 +87,19 @@ var swiper = React.createClass({
               </TouchableHighlight>
               <Text style={[styles.imgTitle,{alignSelf:'center',fontSize:23}]}>Walking City</Text>
               <Text style={styles.imgTitle}>posted by facebook</Text>
-              <Image style={{width:320,height:imgHeight}} source={{uri:"http://blogs-images.forbes.com/erikkain/files/2016/05/Captain-America-Civil-War-concept-art-1-1200x641.jpg"}}></Image>
+              <Image style={{width:ScreenWidth,height:imgHeight}} source={{uri:"http://blogs-images.forbes.com/erikkain/files/2016/05/Captain-America-Civil-War-concept-art-1-1200x641.jpg"}}></Image>
 			</View>
 			<View style={styles.slide2}>
               <Text style={[styles.imgTitle,{alignSelf:'flex-end',color:'#C52C2D'}]}>View All ></Text>
               <Text style={[styles.imgTitle,{alignSelf:'center',fontSize:23}]}>Walking City</Text>
               <Text style={styles.imgTitle}>posted by facebook</Text>
-			  <Image style={{height:imgHeight,width:320}} source={{uri:"http://blogs-images.forbes.com/erikkain/files/2016/05/Captain-America-Civil-War-concept-art-1-1200x641.jpg"}}></Image>
+			  <Image style={{height:imgHeight,width:ScreenWidth}} source={{uri:"http://blogs-images.forbes.com/erikkain/files/2016/05/Captain-America-Civil-War-concept-art-1-1200x641.jpg"}}></Image>
 			</View>
 			<View style={styles.slide3}>
               <Text style={[styles.imgTitle,{alignSelf:'flex-end',color:'#C52C2D'}]}>View All ></Text>
               <Text style={[styles.imgTitle,{alignSelf:'center',fontSize:23}]}>Walking City</Text>
               <Text style={styles.imgTitle}>posted by facebook</Text>
-			  <Image style={{height:imgHeight,width:320}} source={{uri:"http://blogs-images.forbes.com/erikkain/files/2016/05/Captain-America-Civil-War-concept-art-1-1200x641.jpg"}}></Image>
+			  <Image style={{height:imgHeight,width:ScreenWidth}} source={{uri:"http://blogs-images.forbes.com/erikkain/files/2016/05/Captain-America-Civil-War-concept-art-1-1200x641.jpg"}}></Image>
 			</View>
 			</Swiper>
 	  	</View>
