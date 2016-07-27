@@ -12,6 +12,7 @@ import Login from './Login';
 import Home from './Home';
 import Works from './Home/segments/details/works';
 import Collections from './Home/segments/details/collections';
+import Squares from './Home/segments/details/squares';
 
 import * as actions from './../actions/';
 
@@ -43,10 +44,11 @@ var ConnectRouter = React.createClass({
           <Schema name="navPure" navBar={NavBarPure}/>
           <Schema name="tab" navBar={NavBar}/>
 
-          <Route name="launch" component={Login} {...this.props}  hideNavBar={true} title="Launch"/>
-          <Route name="home" component={Home} {...this.props} title="Home" initial={true} type="replace" schema="navPure"/>
+          <Route name="launch" component={Login} {...this.props} initial={true}  hideNavBar={true} title="Launch"/>
+          <Route name="home" component={Home} {...this.props} title="Home"  type="replace" schema="navPure"/>
           <Route name="worksDetail" component={Works} {...this.props} title="works" schema="default"/>
           <Route name="collectionsDetail" component={Collections} {...this.props}  title="Collections" schema="default"/>
+          <Route name="squaresDetail" component={Squares} {...this.props} title="Squares" schema="default"></Route>
         </Router>
       </View>
     );

@@ -20,7 +20,7 @@
   
   NSURL *jsCodeLocation;
   
-  NSString *jsUrl = @"http://localhost:8081/index.ios.bundle";
+  NSString *jsUrl = @"http://192.168.31.100:8081/index.ios.bundle";
   //?platform=ios&dev=false&minify=true";
 
   [[RCTBundleURLProvider sharedSettings] setDefaults];

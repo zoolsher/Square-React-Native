@@ -28,7 +28,7 @@
 		<true/>
 		<key>NSExceptionDomains</key>
 		<dict>
-			<key>localhost</key>
+			<key>192.168.31.100</key>
 			<string></string>
 		</dict>
 	</dict>

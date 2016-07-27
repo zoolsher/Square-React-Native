@@ -4,15 +4,18 @@ import {
   Text,
   StyleSheet,
   ScrollView,
-  Image
+  Image,TouchableHighlight
 } from 'react-native';
+var {Actions} = require('react-native-redux-router');
 const Square = React.createClass({
   render(){
     return(
       <View style={{height:this.props.height}}>
+        <TouchableHighlight onPress={Actions.squaresDetail}>
         <Text style={{color:'#B93336',fontFamily:'DINCond-Regular',fontSize:20,position:'absolute',right:5}}>
           View All>
         </Text>
+        </TouchableHighlight>
         <ScrollView 
           style={{
             marginTop:15

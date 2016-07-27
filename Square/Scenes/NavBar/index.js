@@ -21,15 +21,11 @@ class NavBarBase extends React.Component {
        return <NavigationBar style={styles.navBar}
                              titleColor='white'
                              buttonsColor='white'
-                
                              statusBar= {{tintColor:'black',style:'light-content', hidden: false}}
                              title= {{title:this.props.title,tintColor:'white'}}
                              prevTitle={this.props.initial ? " " : null}
                              leftButton = {this.props.leftButton ? this.props.leftButton : {title:''}}
                              rightButton = {this.props.rightButton ? this.props.rightButton : {title:''}}
-
-
-
            />
    }
 }
@@ -55,25 +51,25 @@ class NavBarPure extends React.Component{
   }
 }
 
-// class NavBarIOSD extends React.Component{
-//   render(){
-//     var Actions = this.props.routes;
-//     return (
-//       <NavigatorIOS
-//         barTintColor='black'
-//         tintColor='white'
-//         titleTextColor='white'
-//         initialRoute = {{
-//           title:this.props.title,
-//           componen:View
-//         }}
-//         style={{
-//           flex:1
-//         }}
-//         />
-//     );
-//   }
-// }
+class NavBarIOSD extends React.Component{
+  render(){
+    var Actions = this.props.routes;
+    return (
+      <NavigatorIOS
+        barTintColor='black'
+        tintColor='white'
+        titleTextColor='white'
+        initialRoute = {{
+          title:this.props.title,
+          component:View
+        }}
+        style={{
+          flex:1
+        }}
+        />
+    );
+  }
+}
 // class NavBarIOS extends React.Componect{
 //   render(){
 //     return(
@@ -101,4 +97,4 @@ var styles = StyleSheet.create({
 });
 
 
-module.exports = {NavBar, NavBarModal,NavBarPure};
+module.exports = {NavBar, NavBarModal,NavBarPure,NavBarIOSD};
