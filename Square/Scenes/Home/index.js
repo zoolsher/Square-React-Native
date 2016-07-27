@@ -18,34 +18,35 @@ var ScreenWidth = Dimensions.get('window').width;
 const PaddingMidWare = React.createClass({
   render(){
     return (
-      <View style={{height:ScreenHeight,paddingTop:64,backgroundColor:'#222222'}}>
+      <View style={{height:ScreenHeight-64,backgroundColor:'#222222'}}>
         <TopSlider></TopSlider>
         <MidBar></MidBar>
-        <Seg nav={_navRefObj} height={ScreenHeight-333-10}></Seg>
+        <Seg height={ScreenHeight-333-10}></Seg>
         <TabBar></TabBar>
       </View>
     );
   }
 });
-var _navRefObj = {nav:null};
+
 const HomePage = React.createClass({
   render(){
     return(
-      <NavigatorIOS
-        ref={($)=>{_navRefObj.nav=$;console.log('running ref')}}
-        barTintColor='black'
-        tintColor='white'
-        titleTextColor='white'
-        initialRoute = {{
-          title:'Home',
-          component:PaddingMidWare,
-        }}
-        style={{
-          flex:1
-        }}
-      />
+      <PaddingMidWare></PaddingMidWare>
     );
   }
 });
 
+// <NavigatorIOS
+//         ref={($)=>{_navRefObj.nav=$;console.log('running ref')}}
+//         barTintColor='black'
+//         tintColor='white'
+//         titleTextColor='white'
+//         initialRoute = {{
+//           title:'Home',
+//           component:PaddingMidWare,
+//         }}
+//         style={{
+//           flex:1
+//         }}
+//       />
 export default HomePage;

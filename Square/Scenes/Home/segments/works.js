@@ -11,7 +11,7 @@ import Swiper from 'react-native-swiper';
 import Square from './square';
 import WorksDetail from './details/works';
 import Dimensions from 'Dimensions';
-
+var {Actions} = require('react-native-redux-router');
 var ScreenWidth = Dimensions.get('window').width;
 
 var styles = StyleSheet.create({
@@ -79,10 +79,7 @@ var swiper = React.createClass({
 			showsButtons={false}
               >
 			<View style={styles.slide1}>
-              <TouchableHighlight onPress={()=>{this.props.nav.nav.push({
-                  component:()=>{return <WorksDetail></WorksDetail>},
-                  title:'Works'
-                })}}>
+              <TouchableHighlight onPress={Actions.worksDetail}>
                 <Text style={[styles.imgTitle,{alignSelf:'flex-end',color:'#C52C2D'}]}>View All > </Text>
               </TouchableHighlight>
               <Text style={[styles.imgTitle,{alignSelf:'center',fontSize:23}]}>Walking City</Text>

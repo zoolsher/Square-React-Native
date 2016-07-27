@@ -2,7 +2,7 @@ import React from 'react';
 import {View,Text,StyleSheet,Image,TextInput,TouchableHighlight} from 'react-native';
 import {BlurView} from 'react-native-blur';
 import Dimensions from 'Dimensions';
-
+var {Actions} = require('react-native-redux-router');
 
 
 const Login = React.createClass({
@@ -14,7 +14,7 @@ const Login = React.createClass({
           <TouchableHighlight style={{flex:1}} activeOpacity={1} underlayColor={'transparent'} onPress={this.props.goToDefault}>
             <Text style={{textAlign:'left',color:'white',fontSize:20}}>&lang; 返回</Text>
           </TouchableHighlight>
-          <TouchableHighlight style={{flex:1}} activeOpacity={1} underlayColor={'transparent'} onPress={this.props.actions.test}>
+          <TouchableHighlight style={{flex:1}} activeOpacity={1} underlayColor={'transparent'} onPress={Actions.home}>
             <Text style={{textAlign:'right',color:'white',fontSize:20}}>下一步 &rang;</Text>
           </TouchableHighlight>
         </View>
