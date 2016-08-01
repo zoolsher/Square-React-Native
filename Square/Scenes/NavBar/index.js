@@ -3,7 +3,7 @@
 var NavigationBar = require('react-native-navbar');
 var React = require('react');
 var {StyleSheet,View,NavigatorIOS} = require('react-native');
-var {Router, Route, Animations, Schema} = require('react-native-redux-router');
+var {Actions, Router, Route, Animations, Schema} = require('react-native-redux-router');
 
 class NavBarBase extends React.Component {
    onPrev(){
@@ -22,7 +22,7 @@ class NavBarBase extends React.Component {
                              titleColor='white'
                              buttonsColor='white'
                              statusBar= {{tintColor:'black',style:'light-content', hidden: false}}
-                             title= {{title:this.props.title,tintColor:'white'}}
+                             title= {{title:this.props.title,tintColor:'white',fontFamily:'DINCond-Regular'}}
                              prevTitle={this.props.initial ? " " : null}
                              leftButton = {this.props.leftButton ? this.props.leftButton : {title:''}}
                              rightButton = {this.props.rightButton ? this.props.rightButton : {title:''}}
@@ -32,7 +32,7 @@ class NavBarBase extends React.Component {
 class NavBar extends React.Component {
    render() {
      var Actions = this.props.routes;
-       return <NavBarBase customNext={<View/>} {...this.props} leftButton={{title:'< Back',tintColor:'white', handler:this.props.onPrev || Actions.pop}}/>
+       return <NavBarBase  customNext={<View/>} {...this.props} leftButton={{title:'< Back',tintColor:'white', handler:this.props.onPrev || Actions.pop}}/>
    }
 }
 
@@ -47,48 +47,11 @@ class NavBarModal extends React.Component {
 class NavBarPure extends React.Component{
   render(){
     var Actions = this.props.routes;
-    return <NavBarBase customPrev={<View/>} {...this.props}/>
+    return <NavBarBase {...this.props}/>
   }
 }
 
-class NavBarIOSD extends React.Component{
-  render(){
-    var Actions = this.props.routes;
-    return (
-      <NavigatorIOS
-        barTintColor='black'
-        tintColor='white'
-        titleTextColor='white'
-        initialRoute = {{
-          title:this.props.title,
-          component:View
-        }}
-        style={{
-          flex:1
-        }}
-        />
-    );
-  }
-}
-// class NavBarIOS extends React.Componect{
-//   render(){
-//     return(
-//       var Actions = this.props.routes;
-//       <NavigatorIOS
-//         barTintColor='black'
-//         tintColor='white'
-//         titleTextColor='white'
-//         initialRoute = {{
-//           title:'Home',
-//           component:PaddingMidWare,
-//         }}
-//         style={{
-//           flex:1
-//         }}
-//       />
-//     )
-//   }
-// }
+
 
 var styles = StyleSheet.create({
    navBar: {
@@ -97,4 +60,4 @@ var styles = StyleSheet.create({
 });
 
 
-module.exports = {NavBar, NavBarModal,NavBarPure,NavBarIOSD};
+module.exports = {NavBar, NavBarModal,NavBarPure};

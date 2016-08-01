@@ -6,10 +6,12 @@ import {bindActionCreators} from 'redux';
 import * as reducers from './../reducers';
 import {connect} from 'react-redux';
 import {Router, routerReducer, Route, Container, Animations, Schema} from 'react-native-redux-router';
+import {Navigator} from 'react-native';
 import {View} from 'react-native';
 var {NavBarModal,NavBar,NavBarPure} = require('./NavBar');
 import Login from './Login';
 import Home from './Home';
+import Notification from './Notification';
 import Works from './Home/segments/details/works';
 import Collections from './Home/segments/details/collections';
 import Squares from './Home/segments/details/squares';
@@ -31,24 +33,25 @@ function dispatchActions(dispatch){
     actions:bindActionCreators(actions,dispatch)
   }
 }
-
+//Animations.FlatFloatFromRight
 var ConnectRouter = React.createClass({
   render(){
     return(
       <View style={{flex:1}}>
         <View style={{position:'absolute',left:0,right:0,top:0,bottom:0,backgroundColor:'black'}}/>
         <Router>
+          <Schema name="default" sceneConfig={Navigator.SceneConfigs.PushFromRight} navBar={NavBar}/>
           <Schema name="modal" sceneConfig={Animations.FlatFloatFromBottom} navBar={NavBarModal}/>
-          <Schema name="default" sceneConfig={Animations.FlatFloatFromRight} navBar={NavBar}/>
           <Schema name="withoutAnimation" navBar={NavBar}/>
           <Schema name="navPure" navBar={NavBarPure}/>
           <Schema name="tab" navBar={NavBar}/>
 
-          <Route name="launch" component={Login} {...this.props} initial={true}  hideNavBar={true} title="Launch"/>
+          <Route name="launch" component={Login} {...this.props}  hideNavBar={true} title="Launch"/>
           <Route name="home" component={Home} {...this.props} title="Home"  type="replace" schema="navPure"/>
-          <Route name="worksDetail" component={Works} {...this.props} title="works" schema="default"/>
+          <Route name="worksDetail" component={Works} {...this.props} title="Works" schema="default"/>
           <Route name="collectionsDetail" component={Collections} {...this.props}  title="Collections" schema="default"/>
           <Route name="squaresDetail" component={Squares} {...this.props} title="Squares" schema="default"></Route>
+          <Route name="notification" component={Notification} initial={true}  {...this.props} title="Notification"  schema="default"/>
         </Router>
       </View>
     );
